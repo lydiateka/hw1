@@ -147,7 +147,7 @@ void ULListStr::pop_front()
 
 std::string const & ULListStr::back() const{
   if (size_ == 0) {
-    return nullptr; 
+    throw std::invalid_argument("Bad location");
   }
 
   return tail_->val[tail_->last-1]; 
@@ -156,7 +156,7 @@ std::string const & ULListStr::back() const{
   
 std::string const & ULListStr::front() const {
   if (size_ == 0) {
-    return nullptr; 
+    throw std::invalid_argument("Bad location");
   }
 
   return head_->val[head_->first]; 
